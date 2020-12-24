@@ -68,6 +68,14 @@ exports.options = function(options){
     }
 }
 
+exports.sendGetRequest = function(url) { 
+  var deferred = Q.defer()
+  , requestUrl = _url + (_version==="latest" ? "" : "/v"+_version)+url+"?apiKey="+_apiKey;
+  
+  sendRequest(deferred, requestUrl, "get");
+  return deferred.promise
+}
+
 exports.getUser = function(){
     var deferred = Q.defer()
     , endPoint = "/user"
