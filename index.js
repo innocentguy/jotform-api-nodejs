@@ -70,7 +70,7 @@ exports.options = function(options){
 
 exports.sendGetRequest = function(url) { 
   var deferred = Q.defer()
-  , requestUrl = _url + (_version==="latest" ? "" : "/v"+_version)+url+"?apiKey="+_apiKey;
+  , requestUrl = _url + (_version==="latest" ? "" : "/v"+_version)+url;
   
   sendRequest(deferred, requestUrl, "get");
   return deferred.promise
