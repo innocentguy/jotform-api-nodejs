@@ -46,7 +46,7 @@ function sendRequest(deferred, url, verb, postData){
     }
 }
 
-exports.sendGetRequest(url){
+exports.sendGetRequest = function(url) { 
     var deferred = Q.defer()
     , requestUrl = _url + (_version==="latest" ? "" : "/v"+_version)+url+"?apiKey="+_apiKey;
     
